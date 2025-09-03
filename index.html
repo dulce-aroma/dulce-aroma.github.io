@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dulce Aroma - Floristería</title>
+  <style>
+    :root {
+      --rosa-claro: #ffd9e8;
+      --rosa: #ff9eb5;
+      --rosa-fuerte: #e84393;
+      --blanco: #fff;
+      --negro: #222;
+      --sombra: rgba(0, 0, 0, 0.15);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--rosa-claro);
+      color: var(--negro);
+      scroll-behavior: smooth;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 182, 193, 0.7);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      box-shadow: 0 4px 12px var(--sombra);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: var(--rosa-fuerte);
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: var(--negro);
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--rosa-fuerte);
+    }
+
+    section {
+      padding: 100px 40px;
+      min-height: 100vh;
+    }
+
+    /* INICIO */
+    #inicio {
+      background: linear-gradient(rgba(255, 158, 181, 0.6), rgba(255, 158, 181, 0.6)),
+                  url("Imgs/home.jpeg") no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding-top: 120px;
+      padding-bottom: 100px;
+      color: var(--blanco);
+    }
+
+    #inicio h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    #inicio p {
+      font-size: 1.3rem;
+      max-width: 600px;
+    }
+
+    /* CATÁLOGO */
+    #catalogo {
+      background: var(--blanco);
+      border-radius: 40px 40px 0 0;
+      margin-top: -40px;
+      box-shadow: 0 -4px 20px var(--sombra);
+    }
+
+    #catalogo h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: var(--rosa-fuerte);
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 8px 20px var(--sombra);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 350px; /* más grandes */
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: var(--rosa-fuerte);
+      margin: 10px 0;
+    }
+
+    /* OPINIONES */
+    #testimonios {
+      background: var(--rosa-claro);
+    }
+
+    #testimonios h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: var(--rosa-fuerte);
+      margin-bottom: 30px;
+    }
+
+    .testimonios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .testimonio {
+      background: var(--blanco);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 12px var(--sombra);
+      font-style: italic;
+    }
+
+    .testimonio strong {
+      display: block;
+      margin-top: 10px;
+      color: var(--rosa-fuerte);
+    }
+
+    #form-opinion {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    #form-opinion input, #form-opinion textarea {
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+
+    #form-opinion button {
+      background: var(--rosa-fuerte);
+      color: var(--blanco);
+      border: none;
+      border-radius: 10px;
+      padding: 12px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #form-opinion button:hover {
+      background: var(--rosa);
+    }
+
+    /* CONTACTO */
+    #contacto {
+      background: linear-gradient(135deg, var(--rosa), var(--rosa-fuerte));
+      color: var(--blanco);
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    #contacto h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .redes {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .redes a {
+      background: var(--blanco);
+      color: var(--rosa-fuerte);
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .redes a:hover {
+      background: var(--rosa-claro);
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: var(--rosa-fuerte);
+      color: var(--blanco);
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>🌸 Dulce Aroma</h1>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#testimonios">Opiniones</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- INICIO -->
+  <section id="inicio">
+    <h2>Bienvenidos a Dulce Aroma</h2>
+    <p>La floristería donde cada ramo cuenta una historia y cada pétalo transmite emociones. Creamos experiencias inolvidables para tus momentos más especiales.</p>
+  </section>
+
+  <!-- CATÁLOGO -->
+ <section id="catalogo">
+  <h2>Nuestro Catálogo</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="Imgs/lirios.jpeg" alt="Lirios">
+      <h3>Lirios</h3>
+      <p>Simbolizan pureza y renovación, ideales para celebrar nuevos comienzos.</p>
+    </div>
+    <div class="card">
+      <img src="Imgs/tulipanes.jpeg" alt="Tulipanes">
+      <h3>Tulipanes</h3>
+      <p>Representan amor perfecto y alegría, perfectos para regalar en primavera.</p>
+    </div>
+    <div class="card">
+      <img src="Imgs/girasol.jpeg" alt="Girasol">
+      <h3>Girasol</h3>
+      <p>Con su energía positiva, transmiten felicidad y vitalidad.</p>
+    </div>
+    <div class="card">
+      <img src="Imgs/dalia.jpeg" alt="Dalia">
+      <h3>Dalia</h3>
+      <p>Flor elegante que simboliza la gratitud y el compromiso.</p>
+    </div>
+    <div class="card">
+      <img src="Imgs/rosablanca.jpeg" alt="Rosa Blanca">
+      <h3>Rosa Blanca</h3>
+      <p>Clásico símbolo de pureza, inocencia y paz.</p>
+    </div>
+    <div class="card">
+      <img src="Imgs/rosaroja.jpeg" alt="Rosa Roja">
+      <h3>Rosa Roja</h3>
+      <p>La expresión universal del amor y la pasión.</p>
+    </div>
+    <div class="card">
+      <img src="Imgs/amapolas.jpeg" alt="Amapolas">
+      <h3>Amapolas</h3>
+      <p>Transmiten descanso y esperanza, un toque silvestre y delicado.</p>      
+    </div>
+    <div class="card">
+      <img src="Imgs/campanillas.jpeg" alt="Campanillas">
+      <h3>Campanillas</h3>
+      <p>Simbolizan humildad y gratitud, con un encanto sencillo.</p>
+    </div>
+    <div class="card">
+      <img src="Imgs/clavel.jpeg" alt="Clavel">
+      <h3>Clavel</h3>
+      <p>Flor versátil que expresa admiración y afecto sincero.</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- OPINIONES -->
+  <section id="testimonios">
+    <h2>Opiniones de nuestros clientes</h2>
+    <div class="testimonios" id="lista-testimonios"></div>
+
+    <h3 style="text-align:center; color:var(--rosa-fuerte)">Deja tu opinión</h3>
+    <form id="form-opinion" onsubmit="agregarOpinion(event)">
+      <input type="text" id="nombre" required placeholder="Tu nombre">
+      <textarea id="comentario" rows="4" required placeholder="Escribe tu opinión aquí..."></textarea>
+      <button type="submit">Agregar Opinión</button>
+    </form>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <h2>Contáctanos</h2>
+    <p style="font-size:1.2rem; margin-bottom:20px;">
+      📞 Teléfono: <strong>+57 300 123 4567</strong>
+    </p>
+
+    <div class="redes">
+      <a href="https://www.facebook.com" target="_blank">🌐 Facebook</a>
+      <a href="https://www.instagram.com" target="_blank">📸 Instagram</a>
+      
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Dulce Aroma - Todos los derechos reservados
+  </footer>
+
+  <script>
+    // Cargar opiniones desde localStorage
+    document.addEventListener("DOMContentLoaded", cargarOpiniones);
+
+    function cargarOpiniones() {
+      const contenedor = document.getElementById('lista-testimonios');
+      contenedor.innerHTML = "";
+      let opiniones = JSON.parse(localStorage.getItem("opiniones")) || [];
+
+      opiniones.forEach(op => {
+        const div = document.createElement('div');
+        div.classList.add('testimonio');
+        div.innerHTML = `<p>“${op.comentario}”</p><strong>- ${op.nombre}</strong>`;
+        contenedor.prepend(div);
+      });
+    }
+
+    function agregarOpinion(e) {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value.trim();
+      const comentario = document.getElementById('comentario').value.trim();
+
+      if (nombre && comentario) {
+        let opiniones = JSON.parse(localStorage.getItem("opiniones")) || [];
+        opiniones.push({ nombre, comentario });
+        localStorage.setItem("opiniones", JSON.stringify(opiniones));
+
+        cargarOpiniones();
+        document.getElementById('form-opinion').reset();
+      }
+    }
+  </script>
+</body>
+</html>
