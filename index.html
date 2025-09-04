@@ -83,6 +83,30 @@
     #inicio p {
       font-size: 1.3rem;
       max-width: 600px;
+      margin-bottom: 25px;
+    }
+
+    .redes {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+
+    .redes a {
+      background: var(--blanco);
+      color: var(--rosa-fuerte);
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .redes a:hover {
+      background: var(--rosa-claro);
+      transform: scale(1.05);
     }
 
     /* CATÁLOGO */
@@ -93,7 +117,7 @@
       box-shadow: 0 -4px 20px var(--sombra);
     }
 
-    #catalogo h2 {
+    #catalogo h2, #ramos h2 {
       text-align: center;
       font-size: 2.5rem;
       color: var(--rosa-fuerte);
@@ -122,7 +146,7 @@
 
     .card img {
       width: 100%;
-      height: 350px; /* más grandes */
+      height: 350px;
       object-fit: cover;
       border-radius: 15px;
       margin-bottom: 15px;
@@ -197,42 +221,6 @@
       background: var(--rosa);
     }
 
-    /* CONTACTO */
-    #contacto {
-      background: linear-gradient(135deg, var(--rosa), var(--rosa-fuerte));
-      color: var(--blanco);
-      text-align: center;
-      padding: 80px 20px;
-    }
-
-    #contacto h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-
-    .redes {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-
-    .redes a {
-      background: var(--blanco);
-      color: var(--rosa-fuerte);
-      padding: 12px 20px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    .redes a:hover {
-      background: var(--rosa-claro);
-      transform: scale(1.05);
-    }
-
     footer {
       background: var(--rosa-fuerte);
       color: var(--blanco);
@@ -249,8 +237,8 @@
     <nav>
       <a href="#inicio">Inicio</a>
       <a href="#catalogo">Catálogo</a>
+      <a href="#ramos">Ramos</a>
       <a href="#testimonios">Opiniones</a>
-      <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
@@ -258,60 +246,97 @@
   <section id="inicio">
     <h2>Bienvenidos a Dulce Aroma</h2>
     <p>La floristería donde cada ramo cuenta una historia y cada pétalo transmite emociones. Creamos experiencias inolvidables para tus momentos más especiales.</p>
+    
+    <!-- Redes sociales aquí -->
+    <div class="redes">
+      <a href="https://www.facebook.com/people/Florister%25C3%25ADa-DulceAroma/pfbid07L8mFFfbkdR35PYev6ieGHiT5AYqdBW2Gg5fafHscnV2jSnrt5TGPnmXo7Jxe96wl/?rdid=ZqjSlhscb9SXdKGu&share_url=https%253A%252F%252Fwww.facebook.com%252Fshare%252F174X9skP8M%252F" target="_blank">🌐 Facebook</a>
+      <a href="https://www.instagram.com/floristeria_dulcearoma/?igsh=MWhkMzh1NjVoeDk3dw%3D%3D#" target="_blank">📸 Instagram</a>
+    </div>
   </section>
 
   <!-- CATÁLOGO -->
- <section id="catalogo">
-  <h2>Nuestro Catálogo</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="lirios.jpeg" alt="Lirios">
-      <h3>Lirios</h3>
-      <p>Simbolizan pureza y renovación, ideales para celebrar nuevos comienzos.</p>
+  <section id="catalogo">
+    <h2>Nuestro Catálogo</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="lirios.jpeg" alt="Lirios">
+        <h3>Lirios</h3>
+        <p>Simbolizan pureza y renovación, ideales para celebrar nuevos comienzos.</p>
+      </div>
+      <div class="card">
+        <img src="tulipanes.jpeg" alt="Tulipanes">
+        <h3>Tulipanes</h3>
+        <p>Representan amor perfecto y alegría, perfectos para regalar en primavera.</p>
+      </div>
+      <div class="card">
+        <img src="girasol.jpeg" alt="Girasol">
+        <h3>Girasol</h3>
+        <p>Con su energía positiva, transmiten felicidad y vitalidad.</p>
+      </div>
+      <div class="card">
+        <img src="dalia.jpeg" alt="Dalia">
+        <h3>Dalia</h3>
+        <p>Flor elegante que simboliza la gratitud y el compromiso.</p>
+      </div>
+      <div class="card">
+        <img src="rosablanca.jpeg" alt="Rosa Blanca">
+        <h3>Rosa Blanca</h3>
+        <p>Clásico símbolo de pureza, inocencia y paz.</p>
+      </div>
+      <div class="card">
+        <img src="rosaroja.jpeg" alt="Rosa Roja">
+        <h3>Rosa Roja</h3>
+        <p>La expresión universal del amor y la pasión.</p>
+      </div>
+      <div class="card">
+        <img src="amapolas.jpeg" alt="Amapolas">
+        <h3>Amapolas</h3>
+        <p>Transmiten descanso y esperanza, un toque silvestre y delicado.</p>      
+      </div>
+      <div class="card">
+        <img src="campanillas.jpeg" alt="Campanillas">
+        <h3>Campanillas</h3>
+        <p>Simbolizan humildad y gratitud, con un encanto sencillo.</p>
+      </div>
+      <div class="card">
+        <img src="clavel.jpeg" alt="Clavel">
+        <h3>Clavel</h3>
+        <p>Flor versátil que expresa admiración y afecto sincero.</p>
+      </div>
     </div>
-    <div class="card">
-      <img src="tulipanes.jpeg" alt="Tulipanes">
-      <h3>Tulipanes</h3>
-      <p>Representan amor perfecto y alegría, perfectos para regalar en primavera.</p>
-    </div>
-    <div class="card">
-      <img src="girasol.jpeg" alt="Girasol">
-      <h3>Girasol</h3>
-      <p>Con su energía positiva, transmiten felicidad y vitalidad.</p>
-    </div>
-    <div class="card">
-      <img src="dalia.jpeg" alt="Dalia">
-      <h3>Dalia</h3>
-      <p>Flor elegante que simboliza la gratitud y el compromiso.</p>
-    </div>
-    <div class="card">
-      <img src="rosablanca.jpeg" alt="Rosa Blanca">
-      <h3>Rosa Blanca</h3>
-      <p>Clásico símbolo de pureza, inocencia y paz.</p>
-    </div>
-    <div class="card">
-      <img src="rosaroja.jpeg" alt="Rosa Roja">
-      <h3>Rosa Roja</h3>
-      <p>La expresión universal del amor y la pasión.</p>
-    </div>
-    <div class="card">
-      <img src="amapolas.jpeg" alt="Amapolas">
-      <h3>Amapolas</h3>
-      <p>Transmiten descanso y esperanza, un toque silvestre y delicado.</p>      
-    </div>
-    <div class="card">
-      <img src="campanillas.jpeg" alt="Campanillas">
-      <h3>Campanillas</h3>
-      <p>Simbolizan humildad y gratitud, con un encanto sencillo.</p>
-    </div>
-    <div class="card">
-      <img src="clavel.jpeg" alt="Clavel">
-      <h3>Clavel</h3>
-      <p>Flor versátil que expresa admiración y afecto sincero.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
+  <!-- RAMOS -->
+  <section id="ramos">
+    <h2>Ramos Especiales</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="ramorosas.jpg" alt="Ramo de Rosas">
+        <h3>Ramo de Rosas</h3>
+        <p>El detalle perfecto para expresar amor con elegancia.</p>
+      </div>
+      <div class="card">
+        <img src="ramorosasblancas.jpg" alt="Ramo de Rosas">
+        <h3>Ramo de Rosas Blancas</h3>
+        <p>El detalle perfecto para expresar amor con elegancia.</p>
+      </div>
+      <div class="card">
+        <img src="ramotulipanes.jpg" alt="Ramo de Tulipanes">
+        <h3>Ramo de Tulipanes</h3>
+        <p>Colorido y alegre, ideal para regalar en cualquier ocasión.</p>
+      </div>
+      <div class="card">
+        <img src="ramomixto.jpg" alt="Ramo Mixto">
+        <h3>Ramo Mixto</h3>
+        <p>Una explosión de colores y fragancias en un solo ramo.</p>
+      </div>
+      <div class="card">
+        <img src="ramogirasoles.jpg" alt="Ramo de Girasoles">
+        <h3>Ramo de Girasoles</h3>
+        <p>Transmite alegría, luz y vitalidad en cada pétalo.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- OPINIONES -->
   <section id="testimonios">
@@ -324,20 +349,6 @@
       <textarea id="comentario" rows="4" required placeholder="Escribe tu opinión aquí..."></textarea>
       <button type="submit">Agregar Opinión</button>
     </form>
-  </section>
-
-  <!-- CONTACTO -->
-  <section id="contacto">
-    <h2>Contáctanos</h2>
-    <p style="font-size:1.2rem; margin-bottom:20px;">
-      📞 Teléfono: <strong>+57 300 123 4567</strong>
-    </p>
-
-    <div class="redes">
-      <a href="https://www.facebook.com" target="_blank">🌐 Facebook</a>
-      <a href="https://www.instagram.com" target="_blank">📸 Instagram</a>
-      
-    </div>
   </section>
 
   <footer>
@@ -378,4 +389,3 @@
   </script>
 </body>
 </html>
-
